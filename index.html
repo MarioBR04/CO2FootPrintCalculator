@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Huella Ambiental</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Calculadora de Huella Ambiental</h1>
+            <p>Descubre tu impacto en el planeta y cómo reducirlo.</p>
+        </header>
+
+        <main>
+            <form id="carbon-form">
+                <!-- Transporte -->
+                <div class="form-section">
+                    <h2>🚗 Transporte</h2>
+                    <div class="input-group">
+                        <label for="transport-mode">Medio de transporte principal</label>
+                        <select id="transport-mode">
+                            <option value="car">Automóvil (Gasolina)</option>
+                            <option value="bus">Transporte Público</option>
+                            <option value="bike">Bicicleta / Caminando</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label for="km-week">Kilómetros por semana</label>
+                        <input type="number" id="km-week" placeholder="Ej. 100" min="0">
+                    </div>
+                </div>
+
+                <!-- Energía -->
+                <div class="form-section">
+                    <h2>⚡ Energía en Casa</h2>
+                    <div class="input-group">
+                        <label for="electricity">Consumo eléctrico (kWh/mes)</label>
+                        <input type="number" id="electricity" placeholder="Ej. 250" min="0">
+                    </div>
+                    <div class="input-group">
+                        <label for="gas">Consumo de gas (m³/mes)</label>
+                        <input type="number" id="gas" placeholder="Ej. 30" min="0">
+                    </div>
+                </div>
+
+                <!-- Hábitos -->
+                <div class="form-section">
+                    <h2>🛍️ Hábitos de Consumo</h2>
+                    <div class="input-group">
+                        <label for="shopping">Hábitos de compra</label>
+                        <select id="shopping">
+                            <option value="minimalist">Minimalista (Solo lo necesario)</option>
+                            <option value="average">Promedio</option>
+                            <option value="consumerist">Consumista (Compras frecuentes)</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label for="meat">Consumo de carne</label>
+                        <select id="meat">
+                            <option value="daily">Diario</option>
+                            <option value="weekly">Algunas veces por semana</option>
+                            <option value="rarely">Raramente</option>
+                            <option value="vegetarian">Vegetariano / Vegano</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Climatización -->
+                <div class="form-section">
+                    <h2>❄️ Climatización</h2>
+                    <div class="input-group">
+                        <label for="hvac">Uso de Aire Acondicionado / Calefacción (Horas/día)</label>
+                        <input type="number" id="hvac" placeholder="Ej. 4" min="0">
+                    </div>
+                </div>
+
+                <button type="button" id="calculate-btn">Calcular Huella</button>
+            </form>
+
+            <div id="result" class="hidden">
+                <h2>Tu Huella de Carbono Estimada</h2>
+                <div class="score-container">
+                    <span id="score-value">0</span>
+                    <span class="unit">kg CO₂/año</span>
+                </div>
+                <p id="feedback-text">Ingresa tus datos para ver el resultado.</p>
+            </div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
